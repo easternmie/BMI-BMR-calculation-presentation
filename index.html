@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI and BMR Calculation</title>
+  <meta charset="utf-8">
+  <meta name="description" content="BMI and BMR Calculation">
+  <meta name="author" content="Mohd Helmi">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>BMI and BMR Calculation</h1>
+    <h2>Shiny App</h2>
+    <p>Mohd Helmi<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Intro</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This Body Mass Index (BMI) and Basal Metabolic Rate (BMR) Calculation is an app to guide user know their BMI and BMR. The information is useful to guide user plan their daily diet.</p>
+
+<p>BMI, or body mass index, is a statistical measurement of a person’s body weight that is based on both weight and height. It is used to determine what a person’s ideal weight is.</p>
+
+<p>BMR refers to a person’s Basal Metabolic Rate, or the number of calories a person would burn in a day even if he or she did nothing but sit or lie in one place.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Shiny App</h2>
+  </hgroup>
+  <article data-timings="">
+   <table>
+    <tr><td><img src="assets/img/bmibmrcalculation.png" height="60%" width="60%"></td></tr>
+    <tr><td><a target="_blank" href="http://easternmie.shinyapps.io/BMI-BMR-calculation">http://easternmie.shinyapps.io/BMI-BMR-calculation</a></td></tr>
+    </table>    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>ui.R</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+      <li>This UI deivided into two layout :</li>
+      <li>sidebarPanel</li>
+      <li>mainPanel</li>
+      <br>
+      <li>sidebarPanel contains all user input control which is controled by tab. Every tab has different input control.</li>
+      <li>mainPanel contain tabsetPanels. 3 tab separated to display result BMI, result BMR and Calories needed by user.</li>
+    </ul>
+</article>
+</slide>
+<slide class="" id="slide-4" style="background:;">
+<hgroup>
+<h2>server.R</h2>
+</hgroup>
+  <article data-timings="">
+<ul>
+  <li>process the user input every time Calculate button pressed.</li>
+  <li>server.R have 4 unique function which is :
+  <ul>
+    <li>funcBMI (), accepting two variable which is height and weight.</li>
+    <li>funcClassBMI (), accepting only one variable which is BMI.</li>
+    <li>funcBMR (), accepting 4 variable which is height, weight, age and gender.</li>
+    <li>funcCal (), accepting two variable which is BMR and daily active rate.</li>
+  </ul>
+  </li>
+</ul>
+
+</article>
+</slide>
+<slide>
+<hgroup>
+<h2>Features</h2>
+</hgroup>
+  <article data-timings="">
+<p>Calories calculated in &quot;Calorie needed&quot; is to guide user to have their daily meal. For example, if calorie need is 1698.6, he/she cannot eat &quot;PECAN PIE 1 PIE&quot; and many more. Refer <a href="http://www.myfoodbuddy.com/foodCalorieTable.htm">http://www.myfoodbuddy.com/foodCalorieTable.htm</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Intro'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Shiny App'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='ui.R'>
+         3
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
